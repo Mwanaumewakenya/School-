@@ -1,0 +1,179 @@
+
+    body1 {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .report-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        max-width: 800px;
+        margin-top: 20px;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Adjust as needed */
+        margin-bottom: 20px;
+        position: relative; /* Ensure it stays at the top in print */
+    }
+
+    .header-container img {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .header-container h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .additional-info {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-radius: 4px;
+    }
+
+    .additional-info p {
+        margin: 5px 0;
+    }
+
+    .input-container {
+        margin-bottom: 20px;
+    }
+
+    .input-container label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .input-container input {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 150px;
+        margin-right: 10px;
+    }
+
+    .input-container button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .input-container button:hover {
+        background-color: #45a049;
+    }
+
+    .student-details {
+        margin-bottom: 20px;
+    }
+
+    .student-details p {
+        margin: 5px 0;
+    }
+
+    .exam-results table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .exam-results table,
+    .exam-results th,
+    .exam-results td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .exam-results th {
+        background-color: palegreen;
+        text-align: left;
+    }
+
+    .bar-chart-container {
+        margin-bottom: 20px;
+    }
+
+    .print-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .print-button:hover {
+        background-color: #45a049;
+    }
+
+    .error-message {
+        color: red;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    @media print {
+        .header-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensure it aligns properly in print */
+        }
+
+        .header-container img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .header-container h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .report-container {
+            margin-top: -100px; /* Adjust to accommodate header height */
+        }
+
+        .additional-info {
+            display: block;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .input-container, .print-button {
+            display: none;
+        }
+    }
+
+    @page {
+        size: A4;
+        margin: 20mm 15mm; /* Adjust margins as needed */
+    }
